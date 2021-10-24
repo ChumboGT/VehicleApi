@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace VehicleApi.Entities.Models
+﻿namespace VehicleApi.Entities.Models
 {
     public class Vehicle
     {
