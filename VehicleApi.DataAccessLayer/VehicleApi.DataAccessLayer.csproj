@@ -5,7 +5,13 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Devart.Data.SQLite.EFCore" Version="5.18.2001" />
+    <PackageReference Include="Microsoft.Data.Sqlite.Core" Version="5.0.11" />
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="5.0.11" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\VehicleApi.Entities\VehicleApi.Entities.csproj" />
   </ItemGroup>
 
 </Project>
