@@ -17,6 +17,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\VehicleApi.Business\VehicleApi.Business.csproj" />
     <ProjectReference Include="..\VehicleApi.DataAccessLayer\VehicleApi.DataAccessLayer.csproj" />
     <ProjectReference Include="..\VehicleApi.Entities\VehicleApi.Entities.csproj" />
   </ItemGroup>

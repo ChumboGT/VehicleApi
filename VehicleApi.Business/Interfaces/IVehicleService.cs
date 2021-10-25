@@ -7,7 +7,7 @@ using VehicleApi.Business.Dtos;
 
 namespace VehicleApi.Business.Interfaces
 {
-    interface IVehicleService
+    public interface IVehicleService
     {
         //Create
         VehicleDto CreateVehicle(VehicleDto vehicle);

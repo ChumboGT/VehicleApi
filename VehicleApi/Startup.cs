@@ -13,6 +13,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using VehicleApi.Business.Interfaces;
+using VehicleApi.Business.Services;
 using VehicleApi.DataAccessLayer.SQLite;
 
 namespace VehicleApi
@@ -33,6 +35,8 @@ namespace VehicleApi
                     .AddMicrosoftIdentityWebApi(Configuration.GetSection("AzureAd"));
 
             services.AddDbContext<VehicleDbContext>();
+
+            services.AddScoped<IVehicleService, VehicleService>();
 
             services.AddControllers();
 

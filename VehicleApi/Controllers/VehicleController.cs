@@ -24,7 +24,17 @@ namespace VehicleApi.Controllers
         [HttpGet]
         public IEnumerable<string> Get()
         {
-            return new string[] { "value1", "value2" };
+            //TODO: Try/Catch just for Confic testing, remove later.
+            try
+            {
+                _vehicleService.GetVehicles();
+            }
+            catch (NotImplementedException ex)
+            {
+                return new string [] { "Got a NIE! Jood WORK!", $"{ex.Message}" };
+            }
+
+            return new string[] { "Try again", "no exception" };
         }
 
         // GET api/<VehicleController>/5
