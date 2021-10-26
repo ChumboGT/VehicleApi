@@ -6,7 +6,7 @@ using VehicleApi.DataAccessLayer.SQLite;
 
 namespace VehicleApi.DataAccessLayer.Migrations
 {
-    [DbContext(typeof(VehicleDbContext))]
+    [DbContext(typeof(VehicleSQLiteDBContext))]
     partial class VehicleDbContextModelSnapshot : ModelSnapshot
     {
         protected override void BuildModel(ModelBuilder modelBuilder)

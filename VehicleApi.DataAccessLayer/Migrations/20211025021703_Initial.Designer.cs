@@ -7,7 +7,7 @@ using VehicleApi.DataAccessLayer.SQLite;
 
 namespace VehicleApi.DataAccessLayer.Migrations
 {
-    [DbContext(typeof(VehicleDbContext))]
+    [DbContext(typeof(VehicleSQLiteDBContext))]
     [Migration("20211025021703_Initial")]
     partial class Initial
     {

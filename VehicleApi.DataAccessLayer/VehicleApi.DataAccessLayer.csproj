@@ -11,6 +11,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\VehicleApi.Common\VehicleApi.Common.csproj" />
     <ProjectReference Include="..\VehicleApi.Entities\VehicleApi.Entities.csproj" />
   </ItemGroup>
 
