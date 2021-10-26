@@ -1,7 +1,9 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using NSubstitute;
 using System;
 using System.Collections.Generic;
-using VehicleApi.Business.Dtos;
+using VehicleApi.Common.Dtos;
+using VehicleApi.Business.Interfaces;
 using VehicleApi.Business.Services;
 
 namespace VehicleApi.Tests.Services
@@ -9,11 +11,12 @@ namespace VehicleApi.Tests.Services
     [TestClass]
     public class VehicleServiceTests
     {
-        private readonly VehicleService _vehicleService;
+        private IVehicleService _vehicleService;
 
-        public VehicleServiceTests()
+        [TestInitialize]
+        public void InitializeTestValues()
         {
-            _vehicleService = new VehicleService();
+            _vehicleService = Substitute.For<IVehicleService>();
         }
 
         //TODO: Remove/change this once the GetVehicles() method is implemented
@@ -21,7 +24,18 @@ namespace VehicleApi.Tests.Services
         [ExpectedException(typeof(NotImplementedException))]
         public void GetVehicles_InputIs1_ReturnNIE()
         {
-            List<VehicleDto> vehicles =  _vehicleService.GetVehicles();
+            //IEnumerable<VehicleDto> vehicles =  _vehicleService.GetVehicles();
+        }
+
+        [TestMethod]
+        public void GetVehicleById_NoVehicleWithEnteredId_ShouldReturnNull()
+        {
+            //arrange
+
+            //act
+
+
+            //assert
         }
     }
 }
