@@ -1,19 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using System.Collections.Generic;
 using System.Threading.Tasks;
-using VehicleApi.Common.Dtos;
-using VehicleApi.DataAccessLayer.Database.Entities;
+using VehicleApi.Entities.Models;
 
 namespace VehicleApi.DataAccessLayer.Database.Interfaces
 {
     public interface IVehicleRepository
     {
-        IEnumerable<VehicleEntity> GetVehicles();
-        void InsertVehicle(VehicleEntity vehicle);
+        ValueTask<IEnumerable<Vehicle>> GetVehicles();
+        ValueTask<Vehicle> GetVehicleById(int vehicleId);
+        void InsertVehicle(Vehicle vehicle);
         void DeleteVehicle(int vehicleId);
-        void UpdateVehicle(VehicleEntity vehicle);
+        void UpdateVehicle(Vehicle vehicle);
         void Save();
     }
 }

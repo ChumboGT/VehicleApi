@@ -1,13 +1,9 @@
-﻿using System;
+﻿using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
-using VehicleApi.Common.Dtos;
-using VehicleApi.Common.Interfaces.Database;
-using VehicleApi.DataAccessLayer.Database.Entities;
 using VehicleApi.DataAccessLayer.Database.Interfaces;
 using VehicleApi.DataAccessLayer.SQLite;
+using VehicleApi.Entities.Models;
 
 namespace VehicleApi.DataAccessLayer.Database
 {
@@ -20,29 +16,37 @@ namespace VehicleApi.DataAccessLayer.Database
             _context = context;
         }
 
-        public IEnumerable<VehicleEntity> GetVehicles()
+        public async ValueTask<IEnumerable<Vehicle>> GetVehicles()
         {
-            throw new NotImplementedException();
+            return await _context.Vehicles.ToListAsync();
         }
 
-        public void InsertVehicle(VehicleEntity vehicle)
+        public async ValueTask<Vehicle> GetVehicleById(int vehicleId)
         {
-            throw new NotImplementedException();
+            return await _context.Vehicles.FindAsync(vehicleId);
         }
 
-        public void DeleteVehicle(int vehicleId)
+        public async void InsertVehicle(Vehicle vehicle)
         {
-            throw new NotImplementedException();
+            await _context.Vehicles.AddAsync(vehicle);
         }
 
-        public void UpdateVehicle(VehicleEntity vehicle)
+        public async void DeleteVehicle(int vehicleId)
         {
-            throw new NotImplementedException();
+            Vehicle vehicle = await _context.Vehicles.FindAsync(vehicleId);
+            _context.Vehicles.Remove(vehicle);
+            await _context.SaveChangesAsync();
         }
 
-        public void Save()
+        public async void UpdateVehicle(Vehicle vehicle)
         {
-            throw new NotImplementedException();
+            _context.Vehicles.Update(vehicle);
+            await _context.SaveChangesAsync();
+        }
+
+        public async void Save()
+        {
+            await _context.SaveChangesAsync();
         }
     }
 }
