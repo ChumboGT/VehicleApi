@@ -5,6 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Folder Include="Interfaces\Database\" />
     <Folder Include="Interfaces\Services\" />
   </ItemGroup>
 

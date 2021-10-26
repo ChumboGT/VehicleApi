@@ -1,9 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using VehicleApi.Business.Dtos;
+﻿using System.Collections.Generic;
+using VehicleApi.Common.Dtos;
 
 namespace VehicleApi.Business.Interfaces
 {
@@ -13,7 +9,7 @@ namespace VehicleApi.Business.Interfaces
         VehicleDto CreateVehicle(VehicleDto vehicle);
 
         //Read
-        List<VehicleDto> GetVehicles();
+        IEnumerable<VehicleDto> GetVehicles();
         VehicleDto GetVehicleById(int vehicleId);
 
         //Update

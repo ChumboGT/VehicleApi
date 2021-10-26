@@ -34,7 +34,7 @@ namespace VehicleApi
             services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
                     .AddMicrosoftIdentityWebApi(Configuration.GetSection("AzureAd"));
 
-            services.AddDbContext<VehicleDbContext>();
+            services.AddDbContext<VehicleSQLiteDBContext>();
 
             services.AddScoped<IVehicleService, VehicleService>();
 

@@ -27,7 +27,7 @@ namespace VehicleApi.Controllers
             //TODO: Try/Catch just for Confic testing, remove later.
             try
             {
-                _vehicleService.GetVehicles();
+                //_vehicleService.GetVehicles();
             }
             catch (NotImplementedException ex)
             {

@@ -3,13 +3,21 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using VehicleApi.Business.Dtos;
 using VehicleApi.Business.Interfaces;
+using VehicleApi.Common.Dtos;
+using VehicleApi.DataAccessLayer.SQLite;
 
 namespace VehicleApi.Business.Services
 {
     public class VehicleService : IVehicleService
     {
+        private static VehicleSQLiteDBContext _vehicleSQLiteDBContext;
+
+        public VehicleService(VehicleSQLiteDBContext vehicleSQLiteDBContext)
+        {
+            _vehicleSQLiteDBContext = vehicleSQLiteDBContext;
+        }
+
         public VehicleDto CreateVehicle(VehicleDto vehicle)
         {
             throw new NotImplementedException();
@@ -25,7 +33,7 @@ namespace VehicleApi.Business.Services
             throw new NotImplementedException();
         }
 
-        public List<VehicleDto> GetVehicles()
+        public IEnumerable<VehicleDto> GetVehicles()
         {
             throw new NotImplementedException();
         }

@@ -1,4 +1,4 @@
-﻿namespace VehicleApi.Business.Dtos
+﻿namespace VehicleApi.Common.Dtos
 {
     public class VehicleDto
     {
