@@ -1,5 +1,4 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using NSubstitute;
 using System;
 using System.Collections.Generic;
 using VehicleApi.Common.Dtos;
@@ -16,7 +15,7 @@ namespace VehicleApi.Tests.Services
         [TestInitialize]
         public void InitializeTestValues()
         {
-            _vehicleService = Substitute.For<IVehicleService>();
+            //_vehicleService = Substitute.For<IVehicleService>();
         }
 
         //TODO: Remove/change this once the GetVehicles() method is implemented
