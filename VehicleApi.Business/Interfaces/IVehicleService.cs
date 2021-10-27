@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Threading.Tasks;
 using VehicleApi.Common.Dtos;
 
 namespace VehicleApi.Business.Interfaces
@@ -6,16 +7,16 @@ namespace VehicleApi.Business.Interfaces
     public interface IVehicleService
     {
         //Create
-        VehicleDto CreateVehicle(VehicleDto vehicle);
+        ValueTask<VehicleDto> CreateVehicle(VehicleDto vehicle);
 
         //Read
-        IEnumerable<VehicleDto> GetVehicles();
-        VehicleDto GetVehicleById(int vehicleId);
+        ValueTask<IEnumerable<VehicleDto>> GetVehicles();
+        ValueTask<VehicleDto> GetVehicleById(int vehicleId);
 
         //Update
-        bool UpdateVehicle(VehicleDto vehicle);
+        ValueTask<bool> UpdateVehicle(VehicleDto vehicle);
 
         //Delete
-        bool DeleteVehicleById(int vehicleId);
+        ValueTask<bool> DeleteVehicleById(int vehicleId);
     }
 }

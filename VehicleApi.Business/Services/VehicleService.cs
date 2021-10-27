@@ -5,40 +5,41 @@ using System.Text;
 using System.Threading.Tasks;
 using VehicleApi.Business.Interfaces;
 using VehicleApi.Common.Dtos;
+using VehicleApi.DataAccessLayer.Database.Interfaces;
 using VehicleApi.DataAccessLayer.SQLite;
 
 namespace VehicleApi.Business.Services
 {
     public class VehicleService : IVehicleService
     {
-        private static VehicleSQLiteDBContext _vehicleSQLiteDBContext;
+        private IVehicleRepository _vehicleRepository;
 
-        public VehicleService(VehicleSQLiteDBContext vehicleSQLiteDBContext)
+        public VehicleService(IVehicleRepository vehicleRepository)
         {
-            _vehicleSQLiteDBContext = vehicleSQLiteDBContext;
+            _vehicleRepository = vehicleRepository;
         }
 
-        public VehicleDto CreateVehicle(VehicleDto vehicle)
-        {
-            throw new NotImplementedException();
-        }
-
-        public bool DeleteVehicleById(int vehicleId)
+        public async ValueTask<VehicleDto> CreateVehicle(VehicleDto vehicle)
         {
             throw new NotImplementedException();
         }
 
-        public VehicleDto GetVehicleById(int vehicleId)
+        public async ValueTask<bool> DeleteVehicleById(int vehicleId)
         {
             throw new NotImplementedException();
         }
 
-        public IEnumerable<VehicleDto> GetVehicles()
+        public async ValueTask<VehicleDto> GetVehicleById(int vehicleId)
         {
             throw new NotImplementedException();
         }
 
-        public bool UpdateVehicle(VehicleDto vehicle)
+        public async ValueTask<IEnumerable<VehicleDto>> GetVehicles()
+        {
+            throw new NotImplementedException();
+        }
+
+        public async ValueTask<bool> UpdateVehicle(VehicleDto vehicle)
         {
             throw new NotImplementedException();
         }
